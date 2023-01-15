@@ -5,7 +5,7 @@ namespace Api.Tests.Controllers;
 public class HomeController
 {
     [Fact]
-    public void Get_StatusCode_To_Check()
+    public void ShouldReturnStatusCode200()
     {
         var controller = new Api.Controllers.HomeController();
         var result = controller.Get() as OkResult;
