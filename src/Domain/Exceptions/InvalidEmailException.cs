@@ -4,7 +4,7 @@ namespace Domain.Exceptions;
 
 public partial class InvalidEmailException : Exception
 {
-    private InvalidEmailException(string message = "Invalid email") : base(message)
+    public InvalidEmailException(string message = "Invalid email") : base(message)
     {
     }
 
