@@ -14,4 +14,5 @@ public class Position : Entity
     }
 
     public string Name { get; }
+    public IEnumerable<Stakeholder> Stakeholders { get; } = new List<Stakeholder>();
 }

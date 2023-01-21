@@ -14,4 +14,5 @@ public class Institution : Entity
     }
 
     public string Name { get; }
+    public IEnumerable<Stakeholder> Stakeholders { get; } = new List<Stakeholder>();
 }
