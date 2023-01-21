@@ -12,6 +12,8 @@ public class AppDbContext : DbContext
     public DbSet<Institution> Institutions { get; set; }
     public DbSet<Position> Positions { get; set; }
     public DbSet<Theme> Themes { get; set; }
+    public DbSet<Stakeholder> Stakeholders { get; set; }
+    public DbSet<StakeholderTheme> StakeholderThemes { get; set; }
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
