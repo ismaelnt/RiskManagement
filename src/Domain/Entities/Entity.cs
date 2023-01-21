@@ -2,7 +2,7 @@ namespace Domain.Entities;
 
 public abstract class Entity
 {
-    public int Id { get; protected set; }
-    public DateTime CreatedAt { get; protected set; }
-    public DateTime UpdatedAt { get; protected set; }
+    public int Id { get; }
+    public DateTime CreatedAt { get; }
+    public DateTime? UpdatedAt { get; }
 }
