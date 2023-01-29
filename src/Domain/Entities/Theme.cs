@@ -4,8 +4,9 @@ namespace Domain.Entities;
 
 public class Theme : Entity
 {
-    public Theme(string name)
+    public Theme(int id, string name)
     {
+        Id = id;
         Name = name;
 
         InvalidNameException.ThrowIfInvalid(name);
