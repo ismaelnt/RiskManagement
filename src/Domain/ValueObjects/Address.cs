@@ -2,10 +2,6 @@ namespace Domain.ValueObjects;
 
 public class Address : ValueObject
 {
-    public Address()
-    {
-    }
-
     public Address(string country, string state, string city)
     {
         Country = country;
