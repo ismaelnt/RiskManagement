@@ -15,8 +15,8 @@ public class StakeholderTheme
     }
 
     public int StakeholderId { get; }
-    public Stakeholder Stakeholder { get; }
+    public Stakeholder Stakeholder { get; set; }
 
     public int ThemeId { get; }
-    public Theme Theme { get; }
+    public Theme Theme { get; set; }
 }

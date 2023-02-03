@@ -10,29 +10,23 @@ public class Stakeholder : Entity
     }
 
     public Stakeholder(
-        string name,
-        Status status,
-        Email? email,
-        Phone? phone,
-        Website? website,
-        Address address,
-        string responsible,
-        IList<StakeholderTheme> stakeholderTheme,
-        Institution institution,
-        Position position
+        string requestName,
+        Status requestStatus,
+        Email? requestEmail,
+        Phone? requestPhone,
+        Website? requestWebsite,
+        Address requestAddress,
+        string requestResponsible
     )
     {
-        Name = name;
-        Status = status;
-        Email = email;
-        Phone = phone;
-        Website = website;
+        Name = requestName;
+        Status = requestStatus;
+        Email = requestEmail;
+        Phone = requestPhone;
+        Website = requestWebsite;
         AverageFavorability = 0;
-        Address = address;
-        Responsible = responsible;
-        StakeholderThemes = stakeholderTheme;
-        Institution = institution;
-        Position = position;
+        Address = requestAddress;
+        Responsible = requestResponsible;
     }
 
     public string Name { get; }
@@ -43,7 +37,7 @@ public class Stakeholder : Entity
     public decimal AverageFavorability { get; }
     public Address Address { get; }
     public string Responsible { get; }
-    public IList<StakeholderTheme> StakeholderThemes { get; }
+    public IList<StakeholderTheme> StakeholderThemes { get; set; }
     public int InstitutionId { get; set; }
     public Institution Institution { get; }
     public int PositionId { get; set; }
