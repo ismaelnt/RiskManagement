@@ -29,6 +29,8 @@ public static class DependencyInjection
 
         service.AddAutoMapper(typeof(StakeholderProfile));
         service.AddAutoMapper(typeof(ThemeProfile));
+        service.AddAutoMapper(typeof(InstitutionProfile));
+        service.AddAutoMapper(typeof(PositionProfile));
 
         var myHandlers = AppDomain.CurrentDomain.Load("Application");
         service.AddMediatR(myHandlers);

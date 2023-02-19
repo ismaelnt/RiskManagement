@@ -1,3 +1,4 @@
+using System.Text.Json.Serialization;
 using Domain.Exceptions;
 
 namespace Domain.Entities;
