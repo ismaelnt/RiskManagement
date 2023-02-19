@@ -18,11 +18,11 @@ public class StakeholderService : IStakeholderService
         _mapper = mapper;
     }
 
-    public async Task<IEnumerable<ReadStakeholdersDto>> GetStakeholdersAsync()
+    public async Task<List<ReadStakeholdersDto>> GetStakeholdersAsync()
     {
         var stakeholdersQuery = new GetStakeholdersQuery();
         var result = await _mediator.Send(stakeholdersQuery);
-        var stakeholders = _mapper.Map<IEnumerable<ReadStakeholdersDto>>(result);
+        var stakeholders = _mapper.Map<List<ReadStakeholdersDto>>(result);
 
         return stakeholders;
     }

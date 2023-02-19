@@ -36,7 +36,7 @@ public class StakeholderCreateCommandHandler : IRequestHandler<StakeholderCreate
 
         if (stakeholder is null)
             throw new ApplicationException("Error creating stakeholder");
-
+        
         var institution = await _institutionRepository.CreateIfNotExistsAsync(request.Institution);
         stakeholder.InstitutionId = institution.Id;
 
@@ -46,12 +46,7 @@ public class StakeholderCreateCommandHandler : IRequestHandler<StakeholderCreate
         stakeholder.StakeholderThemes = new List<StakeholderTheme>();
         foreach (var theme in request.Themes)
         {
-            var stakeholderTheme = new StakeholderTheme
-            {
-                Stakeholder = stakeholder,
-                Theme = theme
-            };
-
+            var stakeholderTheme = new StakeholderTheme(theme, stakeholder.Id);
             stakeholder.StakeholderThemes.Add(stakeholderTheme);
         }
 

@@ -24,5 +24,5 @@ public class Theme : Entity
     }
 
     public string Name { get; }
-    public IList<StakeholderTheme> StakeholderThemes { get; } = new List<StakeholderTheme>();
+    public IEnumerable<StakeholderTheme> StakeholderThemes { get; } = new List<StakeholderTheme>();
 }

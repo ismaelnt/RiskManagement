@@ -15,7 +15,7 @@ public abstract class StakeholderCommand : IRequest<Stakeholder>
         Website? website,
         Address address,
         string responsible,
-        IList<Theme> themes,
+        IList<int> themes,
         Institution institution,
         Position position
     )
@@ -43,7 +43,7 @@ public abstract class StakeholderCommand : IRequest<Stakeholder>
     public decimal AverageFavorability { get; }
     public Address Address { get; }
     public string Responsible { get; }
-    public IList<Theme> Themes { get; }
+    public IList<int> Themes { get; }
     public Institution Institution { get; }
     public Position Position { get; }
 }

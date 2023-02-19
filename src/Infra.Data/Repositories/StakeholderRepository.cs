@@ -14,9 +14,16 @@ public class StakeholderRepository : IStakeholderRepository
         _dbContext = dbContext;
     }
 
-    public async Task<List<Stakeholder>> GetAsync()
+    public async Task<IEnumerable<Stakeholder>> GetAsync()
     {
-        return await _dbContext.Stakeholders.AsNoTracking().ToListAsync();
+        var stakeholders = await _dbContext.Stakeholders
+            .AsNoTracking()
+            .Include(s => s.Institution)
+            .Include(s => s.Position)
+            .Include(s => s.StakeholderThemes).ThenInclude(st => st.Theme)
+            .ToListAsync();
+
+        return stakeholders;
     }
 
     public async Task<Stakeholder?> GetByIdAsync(int id)
@@ -26,7 +33,7 @@ public class StakeholderRepository : IStakeholderRepository
 
     public async Task<Stakeholder> CreateAsync(Stakeholder stakeholder)
     {
-        _dbContext.Stakeholders.Add(stakeholder);
+        await _dbContext.Stakeholders.AddAsync(stakeholder);
         await _dbContext.SaveChangesAsync();
         return stakeholder;
     }

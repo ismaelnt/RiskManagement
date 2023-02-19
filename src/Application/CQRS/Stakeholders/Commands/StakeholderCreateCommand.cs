@@ -14,7 +14,7 @@ public class StakeholderCreateCommand : StakeholderCommand
         Website? website,
         Address address,
         string responsible,
-        IList<Theme> themes,
+        IList<int> themes,
         Institution institution,
         Position position
     ) : base(name, status, email, phone, website, address, responsible, themes, institution, position)
