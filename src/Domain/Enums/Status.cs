@@ -2,6 +2,6 @@ namespace Domain.Enums;
 
 public enum Status
 {
-    Active = 0,
-    Inactive = 1
+    Inactive = 0,
+    Active = 1
 }
