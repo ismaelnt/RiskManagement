@@ -1,3 +1,5 @@
+using Application.DTOs.InstitutionDto;
+using Application.DTOs.PositionDto;
 using Domain.Entities;
 using Domain.Enums;
 using Domain.ValueObjects;
@@ -6,18 +8,18 @@ namespace Application.DTOs.StakeholderDto;
 
 public class ReadStakeholdersDto
 {
-    public int Id { get; }
-    public DateTime CreatedAt { get; }
-    public DateTime UpdatedAt { get; }
-    public string Name { get; }
-    public Status Status { get; }
-    public Email? Email { get; }
-    public Phone? Phone { get; }
-    public Website? Website { get; }
-    public decimal AverageFavorability { get; }
-    public Address Address { get; }
-    public string Responsible { get; }
-    public IList<StakeholderTheme> StakeholderThemes { get; }
-    public Institution Institution { get; }
-    public Position Position { get; }
+    public int Id { get; set; }
+    public DateTime CreatedAt { get; set; }
+    public DateTime UpdatedAt { get; set; }
+    public string Name { get; set; }
+    public Status Status { get; set; }
+    public Email? Email { get; set; }
+    public Phone? Phone { get; set; }
+    public Website? Website { get; set; }
+    public decimal AverageFavorability { get; set; }
+    public Address Address { get; set; }
+    public string Responsible { get; set; }
+    public IEnumerable<Theme> Themes { get; set; }
+    public ReadInstitutionDto Institution { get; set; }
+    public ReadPositionDto Position { get; set; }
 }

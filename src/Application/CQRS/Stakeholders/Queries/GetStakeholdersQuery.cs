@@ -3,6 +3,6 @@ using MediatR;
 
 namespace Application.CQRS.Stakeholders.Queries;
 
-public class GetStakeholdersQuery : IRequest<List<Stakeholder>>, IRequest<Stakeholder>
+public class GetStakeholdersQuery : IRequest<IEnumerable<Stakeholder>>, IRequest<Stakeholder>
 {
 }

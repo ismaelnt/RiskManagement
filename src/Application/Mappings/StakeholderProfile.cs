@@ -9,8 +9,8 @@ public class StakeholderProfile : Profile
 {
     public StakeholderProfile()
     {
-        CreateMap<ReadStakeholdersDto, Stakeholder>();
-        CreateMap<ReadStakeholderDto, Stakeholder>();
+        CreateMap<Stakeholder, ReadStakeholdersDto>();
+        CreateMap<Stakeholder, ReadStakeholderDto>();
         CreateMap<CreateStakeholderDto, StakeholderCreateCommand>();
     }
 }

@@ -5,7 +5,7 @@ using MediatR;
 
 namespace Application.CQRS.Stakeholders.QueriesHandlers;
 
-public class GetStakeholdersQueryHandler : IRequestHandler<GetStakeholdersQuery, List<Stakeholder>>
+public class GetStakeholdersQueryHandler : IRequestHandler<GetStakeholdersQuery, IEnumerable<Stakeholder>>
 {
     private readonly IStakeholderRepository _stakeholderRepository;
 
@@ -14,7 +14,7 @@ public class GetStakeholdersQueryHandler : IRequestHandler<GetStakeholdersQuery,
         _stakeholderRepository = stakeholderRepository;
     }
 
-    public async Task<List<Stakeholder>> Handle(GetStakeholdersQuery request, CancellationToken cancellationToken)
+    public async Task<IEnumerable<Stakeholder>> Handle(GetStakeholdersQuery request, CancellationToken cancellationToken)
     {
         var stakeholders = await _stakeholderRepository.GetAsync();
 
